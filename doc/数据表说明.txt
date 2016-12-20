@@ -1,0 +1,35 @@
+ 区域表                    sy_area.sql
+
+ 设备表                    t_prideviceinfo.sql
+
+ 设备类型表                t_devicetype.sql
+
+ 设备参数表                t_deviceparam.sql
+
+ 冷通道实时数据表          t_realdata_63.sql
+
+ 冷通道历史数据表          t_hisdata_63.sql  
+
+ 精密空调实时数据表        t_realdata_generalair.sql
+
+ 精密空调历史数据表        t_hisdata_generalair.sql
+
+ 漏水控制器实时数据表      t_realdata_leaking.sql
+
+ 漏水控制器历史数据表      t_hisdata_leaking.sq
+
+ 精密配电柜实时数据表      t_realdata_yzdistribution.sql
+ 
+ 精密配电柜历史数据表      t_hisdata_yzdistribution.sql
+ 
+ 环境设备实时表            t_realdata_single.sql
+ 
+ 环境设备历史表            t_hisdata_single.sql
+
+ 设备告警表                t_historywarn.sql
+
+ 设备告警类型表            t_warn_define.sql
+ 
+ 特别说明：
+ 
+ 由于环境温湿度是拓展设备 ， 所以环境温设备储存数据的时候也统一存储到了单相UPS的表里，但环境温湿度的主要字段有“envi”,“ws”，“Temp”等关键字，比如历史表中hd_envihumi1是指环境湿度1，envitemp1是指环境温度1。具体可查询设备参数表来区分
