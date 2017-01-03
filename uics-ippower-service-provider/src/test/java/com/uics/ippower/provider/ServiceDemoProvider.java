@@ -18,7 +18,7 @@ package com.uics.ippower.provider;
 public class ServiceDemoProvider {
 
     public static void main(String[] args) {
-      System.setProperty("spring.profiles.default", "test");
+//      System.setProperty("spring.profiles.default", "test");
 //        new Thread(new Runnable() {
 //            public void run() {
 //                try {
@@ -29,7 +29,8 @@ public class ServiceDemoProvider {
 //                ProtocolConfig.destroyAll();
 //            }
 //        }).start();
-        com.alibaba.dubbo.container.Main.main(args);
+//        com.alibaba.dubbo.container.Main.main(args);
+        System.out.println(System.currentTimeMillis());
     }
 
 }

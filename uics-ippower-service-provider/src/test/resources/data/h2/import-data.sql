@@ -1,0 +1,18 @@
+-- TEMPERATURE145.24.219.233-Room_humiture-1	TEMPERATURE	温度	25.8	1.41172E+12	145.24.219.233-Room_humiture-1	Room_humiture	厦门机房温湿度检测仪21--S200HT	145.24.219.233		1
+-- 1、添加 监测仪 查看id
+-- 2、监测仪接口数据挂到监测仪id
+-- 3、select * from mobject_mangedobjects where parent_mobject_id = 10125336
+-- 4、手动设置 温度传感器 的 config-id
+
+-- 320	TEMPERATURE145.24.219.233-Room_humiture-7	TEMPERATURE	温度	24	1.41172E+12	145.24.219.233-Room_humiture-7	Room_humiture	厦门机房温湿度检测仪27--S200HT	145.24.219.233		1
+delete from NOC.NOC_TARGET;
+insert into NOC.NOC_TARGET (TARGET_ID,TARGET_TYPE,TARGET_NAME,VALUE,COLLECTION_TIME,DEVICE_ID,DEVICE_TYPE,DEVICE_NAME,DEVICE_IP,STATUS,ORDERLIST)
+values('TEMPERATURE192.168.1.6-Room_humiture-7','TEMPERATURE','温度','25.8','1482375585070','192.168.1.6-Room_humiture-7','Room_humiture','厦门机房温湿度检测仪27--S200HT','192.168.1.6','','1');
+
+
+-- ups
+-- 377	INPUT_CURRENT_A145.24.219.233-Room_ups-1	INPUT_CURRENT_A	输入A相电流	59	1.41172E+12	145.24.219.233-Room_ups-1	Room_ups	厦门机房UPS1--GalaxyPW	145.24.219.233:9001		1
+-- 395	LOAD_LEVEL145.24.219.233-Room_ups-1	LOAD_LEVEL	负载率	30	1.41172E+12	145.24.219.233-Room_ups-1	Room_ups	厦门机房UPS1--GalaxyPW	145.24.219.233:9001		29
+delete from NOC.NOC_TARGET where TARGET_ID='LOAD_LEVEL145.24.219.233-Room_ups-1';
+insert into NOC.NOC_TARGET (TARGET_ID,TARGET_TYPE,TARGET_NAME,VALUE,COLLECTION_TIME,DEVICE_ID,DEVICE_TYPE,DEVICE_NAME,DEVICE_IP,STATUS,ORDERLIST)
+values('LOAD_LEVEL145.24.219.233-Room_ups-1','LOAD_LEVEL','负载率','88','1482378103053','145.24.219.233-Room_ups-1','Room_ups','厦门机房UPS1--GalaxyPW','145.24.219.233:9001','','1');
