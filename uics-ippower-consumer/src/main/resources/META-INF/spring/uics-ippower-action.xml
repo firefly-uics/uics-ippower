@@ -37,4 +37,39 @@
     </bean>
     <!-- 区域 action -->
 
+
+	<!-- 设备参数 action -->
+    <bean class="com.uics.ippower.consumer.TDeviceparamDemoAction" init-method="start">
+        <property name="tDeviceparamService" ref="tDeviceparamService"/>
+    </bean>
+    <!-- 设备参数 action -->
+
+
+	<!-- 区域 action -->
+    <bean class="com.uics.ippower.consumer.SyAreaDemoAction" init-method="start">
+        <property name="syAreaService" ref="syAreaService"/>
+    </bean>
+    <!-- 区域 action -->
+
+
+	<!-- 设备参数 action -->
+    <bean class="com.uics.ippower.consumer.DeviceparamDemoAction" init-method="start">
+        <property name="deviceparamService" ref="deviceparamService"/>
+    </bean>
+    <!-- 设备参数 action -->
+
+
+	<!-- 区域 action -->
+    <bean class="com.uics.ippower.consumer.YAreaDemoAction" init-method="start">
+        <property name="yAreaService" ref="yAreaService"/>
+    </bean>
+    <!-- 区域 action -->
+
+
+	<!-- 设备参数 action -->
+    <bean class="com.uics.ippower.consumer.DeviceparamDemoAction" init-method="start">
+        <property name="deviceparamService" ref="deviceparamService"/>
+    </bean>
+    <!-- 设备参数 action -->
+
 </beans>

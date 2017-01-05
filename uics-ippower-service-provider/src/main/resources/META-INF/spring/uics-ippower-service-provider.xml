@@ -48,4 +48,28 @@
                    protocol="dubbo" validation="true" timeout="2000" connections="100"/>
     <!-- 区域 api -->
 
+
+	<!-- 设备参数 api -->
+    <bean id="tDeviceparamService" class="com.uics.ippower.service.TDeviceparamServiceImpl"/>
+
+    <dubbo:service interface="com.uics.ippower.service.TDeviceparamService" ref="tDeviceparamService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 设备参数 api -->
+
+
+	<!-- 设备参数 api -->
+    <bean id="deviceparamService" class="com.uics.ippower.service.DeviceparamServiceImpl"/>
+
+    <dubbo:service interface="com.uics.ippower.service.DeviceparamService" ref="deviceparamService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 设备参数 api -->
+
+
+	<!-- 区域 api -->
+    <bean id="yAreaService" class="com.uics.ippower.service.YAreaServiceImpl"/>
+
+    <dubbo:service interface="com.uics.ippower.service.YAreaService" ref="yAreaService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 区域 api -->
+
 </beans>

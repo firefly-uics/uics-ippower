@@ -18,4 +18,19 @@
     <dubbo:reference id="syAreaService" interface="com.uics.ippower.service.SyAreaService"/>
     <!-- 区域 service -->
 
+
+	<!-- 设备参数 service -->
+    <dubbo:reference id="tDeviceparamService" interface="com.uics.ippower.service.TDeviceparamService"/>
+    <!-- 设备参数 service -->
+
+
+	<!-- 设备参数 service -->
+    <dubbo:reference id="deviceparamService" interface="com.uics.ippower.service.DeviceparamService"/>
+    <!-- 设备参数 service -->
+
+
+	<!-- 区域 service -->
+    <dubbo:reference id="yAreaService" interface="com.uics.ippower.service.YAreaService"/>
+    <!-- 区域 service -->
+
 </beans>

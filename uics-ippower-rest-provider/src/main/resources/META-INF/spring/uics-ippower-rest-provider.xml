@@ -67,4 +67,40 @@
     <dubbo:reference id="syAreaService" interface="com.uics.ippower.service.SyAreaService"/>
     <!--区域 api -->
 
+
+	<!--设备参数 api -->
+    <dubbo:service interface="com.uics.ippower.facade.TDeviceparamRestService" ref="tDeviceparamRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="tDeviceparamRestService" class="com.uics.ippower.facade.TDeviceparamRestServiceImpl">
+        <property name="tDeviceparamService" ref="tDeviceparamService"/>
+    </bean>
+
+    <dubbo:reference id="tDeviceparamService" interface="com.uics.ippower.service.TDeviceparamService"/>
+    <!--设备参数 api -->
+
+
+	<!--设备参数 api -->
+    <dubbo:service interface="com.uics.ippower.facade.DeviceparamRestService" ref="deviceparamRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="deviceparamRestService" class="com.uics.ippower.facade.DeviceparamRestServiceImpl">
+        <property name="deviceparamService" ref="deviceparamService"/>
+    </bean>
+
+    <dubbo:reference id="deviceparamService" interface="com.uics.ippower.service.DeviceparamService"/>
+    <!--设备参数 api -->
+
+
+	<!--区域 api -->
+    <dubbo:service interface="com.uics.ippower.facade.YAreaRestService" ref="yAreaRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="yAreaRestService" class="com.uics.ippower.facade.YAreaRestServiceImpl">
+        <property name="yAreaService" ref="yAreaService"/>
+    </bean>
+
+    <dubbo:reference id="yAreaService" interface="com.uics.ippower.service.YAreaService"/>
+    <!--区域 api -->
+
 </beans>
