@@ -13,4 +13,9 @@
     <!--<dubbo:monitor protocol="registry"/>-->
 
     <dubbo:reference id="accountService" interface="com.uics.ippower.service.AccountService"/>
+
+	<!-- 区域 service -->
+    <dubbo:reference id="syAreaService" interface="com.uics.ippower.service.SyAreaService"/>
+    <!-- 区域 service -->
+
 </beans>

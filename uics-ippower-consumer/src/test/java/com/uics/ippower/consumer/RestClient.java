@@ -2,9 +2,6 @@
 package com.uics.ippower.consumer;
 
 
-import com.uics.ippower.entity.From;
-import com.uics.ippower.facade.SignInVO;
-
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;

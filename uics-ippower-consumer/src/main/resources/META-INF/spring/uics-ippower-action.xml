@@ -23,4 +23,18 @@
     </bean>
 
 
+
+	<!-- 区域 action -->
+    <bean class="com.uics.ippower.consumer.SyAreaDemoAction" init-method="start">
+        <property name="syAreaService" ref="syAreaService"/>
+    </bean>
+    <!-- 区域 action -->
+
+
+	<!-- 区域 action -->
+    <bean class="com.uics.ippower.consumer.SyAreaDemoAction" init-method="start">
+        <property name="syAreaService" ref="syAreaService"/>
+    </bean>
+    <!-- 区域 action -->
+
 </beans>
