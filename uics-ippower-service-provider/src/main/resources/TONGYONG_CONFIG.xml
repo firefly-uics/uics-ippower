@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipments>
+	<!-- G100 -->
+	<equipment>
+		<vendor>通用</vendor>
+		<model>G100Monitor</model>
+		<description>G100通用监测仪</description>
+		<collector-type>DB</collector-type>
+		<className>G100Monitor</className>
+		<private-parameter></private-parameter>
+		<attribute-parameter>
+			<Validate>
+				<source>.1.3.6.1.2.1.1.2.0</source>
+				<desc>验证SNMP是否可用的oid</desc>	
+			</Validate>
+		</attribute-parameter>
+	</equipment>
+	
+	<equipment>
+		<vendor>通用</vendor>
+		<model>G100MonitorInterface</model>
+		<description>G100通用监测仪接口</description>
+		<collector-type>DB</collector-type>
+		<className>G100MonitorInterface</className>
+		<private-parameter></private-parameter>
+		<attribute-parameter>
+			<Validate>
+				<source>.1.3.6.1.2.1.1.2.0</source>
+				<desc>验证SNMP是否可用的oid</desc>
+			</Validate>
+		</attribute-parameter>
+	</equipment>
+	<!-- E100 -->
+	<equipment>
+		<vendor>通用</vendor>
+		<model>E100Monitor</model>
+		<description>E100通用监测仪</description>
+		<collector-type>DB</collector-type>
+		<className>E100Monitor</className>
+		<private-parameter></private-parameter>
+		<attribute-parameter>
+			<Validate>
+				<source>.1.3.6.1.2.1.1.2.0</source>
+				<desc>验证SNMP是否可用的oid</desc>	
+			</Validate>
+		</attribute-parameter>
+	</equipment>
+	<equipment>
+		<vendor>通用</vendor>
+		<model>E100MonitorInterface</model>
+		<description>E100通用监测仪接口</description>
+		<collector-type>DB</collector-type>
+		<className>E100MonitorInterface</className>
+		<private-parameter></private-parameter>
+		<attribute-parameter>
+			<Validate>
+				<source>.1.3.6.1.2.1.1.2.0</source>
+				<desc>验证SNMP是否可用的oid</desc>
+			</Validate>
+		</attribute-parameter>
+	</equipment>
+	<equipment>
+		<vendor>通用</vendor>
+		<model>E100Electric</model>
+		<description>E100通用电量仪</description>
+		<collector-type>DB</collector-type>
+		<className>E100Electric</className>
+		<private-parameter></private-parameter>
+		<attribute-parameter>
+			<Validate>
+				<source>.1.3.6.1.2.1.1.2.0</source>
+				<desc>验证SNMP是否可用的oid</desc>
+			</Validate>
+		</attribute-parameter>
+	</equipment>
+	<!-- A100 -->
+	<equipment>
+		<vendor>通用</vendor>
+		<model>A100AirCondition</model>
+		<description>通用空调接口</description>
+		<collector-type>DB</collector-type>
+		<className>A100AirCondition</className>
+		<private-parameter></private-parameter>
+		<attribute-parameter>
+		</attribute-parameter>
+	</equipment>
+	
+</equipments>
