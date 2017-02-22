@@ -1,33 +1,23 @@
-package com.bmc.h2.repository;
+package com.uics.ippower.job;
 
 import com.bmc.h2.entity.NocTarget;
-import com.uics.ippower.entity.SyArea;
+import com.bmc.h2.repository.NocTargetDao;
 import com.uics.ippower.entity.VElement;
-import com.uics.ippower.repository.SyAreaDao;
 import com.uics.ippower.repository.VElementDao;
 import org.apache.commons.beanutils.BeanUtilsBean;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.RandomUtils;
-import org.junit.Assert;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.ContextConfiguration;
-import org.springside.modules.test.spring.SpringTransactionalTestCase;
 
 import javax.persistence.EntityManagerFactory;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 /**
- * 区域
-* Created by tom on 2017-01-05 10:44:30.
+ * Created by tom on 2017/2/22.
  */
-@ContextConfiguration(locations = {"/META-INF/spring/applicationContext.xml","/META-INF/spring/applicationContextH2.xml"})
-
-public class NocTargetDaoTest extends SpringTransactionalTestCase {
-
+public class SyncJob {
+    private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(SyncJob.class);
     @Autowired
     private NocTargetDao nocTargetDao;
 
@@ -37,22 +27,13 @@ public class NocTargetDaoTest extends SpringTransactionalTestCase {
     @Autowired
     private EntityManagerFactory entityManagerFactory;
 
-//    public LocalContainerEntityManagerFactoryBean getEntityManagerFactory() {
-//        return entityManagerFactory;
-//    }
-//
-//    public void setEntityManagerFactory(LocalContainerEntityManagerFactoryBean entityManagerFactory) {
-//        this.entityManagerFactory = entityManagerFactory;
-//    }
-
     public String getValue(String columnName){
         //select rd_envitemp3 from t_realdata_single
-       return entityManagerFactory.createEntityManager().createNativeQuery("select "+columnName+" from t_realdata_single").getSingleResult()+"";
+        return entityManagerFactory.createEntityManager().createNativeQuery("select "+columnName+" from t_realdata_single").getSingleResult()+"";
     }
 
-    @Test
-    @Rollback(false)
-    public void syncData(){
+    public void sync(){
+        LOGGER.info("sync...");
         List<VElement> elements = (List<VElement>) vElementDao.findAll();
 
         for (VElement vElement: elements){
@@ -66,26 +47,21 @@ public class NocTargetDaoTest extends SpringTransactionalTestCase {
                 } catch (InvocationTargetException e) {
                     e.printStackTrace();
                 }
+
                 String value = getValue("rd_"+nocTarget.getDeviceId().split("-")[2]);
                 if("0".equals(value)){
                     value = null;
                 }
 
                 nocTarget.setCollectionTime(System.currentTimeMillis());
-
                 nocTarget.setValue(Double.parseDouble(StringUtils.defaultIfEmpty(value, RandomUtils.nextDouble(10, 100)+"")));
+
                 nocTarget.setStatus("");
                 nocTargetDao.save(nocTarget);
             }
         }
+
+        LOGGER.info("sync.");
     }
 
-    @Test
-    public void findAll(){
-        List<NocTarget> nocTargets = nocTargetDao.findAllBy();
-
-        Assert.assertNotNull(nocTargets);
-
-        Assert.assertEquals(nocTargets.size(), 1);
-    }
 }

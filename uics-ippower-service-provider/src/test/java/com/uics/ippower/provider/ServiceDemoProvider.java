@@ -15,10 +15,14 @@
  */
 package com.uics.ippower.provider;
 
+import org.apache.commons.lang.time.DateFormatUtils;
+
+import java.util.Date;
+
 public class ServiceDemoProvider {
 
     public static void main(String[] args) {
-//      System.setProperty("spring.profiles.default", "test");
+      System.setProperty("spring.profiles.default", "test");
 //        new Thread(new Runnable() {
 //            public void run() {
 //                try {
@@ -29,8 +33,11 @@ public class ServiceDemoProvider {
 //                ProtocolConfig.destroyAll();
 //            }
 //        }).start();
-//        com.alibaba.dubbo.container.Main.main(args);
-        System.out.println(System.currentTimeMillis());
+        com.alibaba.dubbo.container.Main.main(args);
+//        System.out.println(DateFormatUtils.format(1506045365781l, "yyyy-MM-dd mm:ss"));
+//        Date date = new Date();
+//        date.setMonth(8);
+//        System.out.println(date.getTime());
     }
 
 }
